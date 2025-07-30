@@ -24,6 +24,10 @@ namespace Marketplace.Repositories
         {
             return dbSet.ToList();
         }
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await dbSet.ToListAsync();
+        }
 
         public virtual IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
